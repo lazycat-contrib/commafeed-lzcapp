@@ -1,0 +1,33 @@
+{
+  "name": "CommaFeed",
+  "package": "cloud.lazycat.app.commafeed",
+  "description": "受Google Reader 启发的RSS阅读器",
+  "homepage": "https://github.com/Athou/commafeed",
+  "author": "Athou",
+  "app_features": [
+    "multi_instance"
+  ],
+  "subdomain": "commafeed",
+  "version": "5.6.1",
+  "iconPath": "icon.png",
+  "composePath": "docker-compose.yml",
+  "unsupported_platforms": [],
+  "lastRouteType": "from_compose",
+  "port_mappings": {
+    "commafeed_8082_8082": {
+      "use": true,
+      "type": "http",
+      "path": "/",
+      "targetPath": "/"
+    }
+  },
+  "image_athou_commafeed_latest-h2": {
+    "originalImage": "athou/commafeed:latest-h2",
+    "pushTarget": "lazycat",
+    "newImageName": "registry.lazycat.cloud/czyt/athou/commafeed:9275b3236f208b44",
+    "timestamp": "2025-02-25T15:23:03.260Z"
+  },
+  "commafeed_volume_/commafeed/data_action": "emptyDir",
+  "commafeed_volume_/commafeed/data_location": "user_data",
+  "commafeed_volume_/commafeed/data_subdir": "data"
+}
