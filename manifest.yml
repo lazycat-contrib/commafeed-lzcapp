@@ -18,4 +18,4 @@ services:
   commafeed:
     image: registry.lazycat.cloud/czyt/athou/commafeed:9275b3236f208b44
     binds:
-      - /lzcapp/run/mnt/home/data:/commafeed/data
+      - /lzcapp/var/data:/commafeed/data
