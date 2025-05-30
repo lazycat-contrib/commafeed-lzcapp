@@ -7,11 +7,9 @@ homepage: https://github.com/Athou/commafeed
 author: Athou
 application:
   subdomain: commafeed
-  background_task: false
-  multi_instance: true
-  gpu_accel: false
-  kvm_accel: false
-  usb_accel: false
+  background_task: true
+  public_path:
+    - /
   routes:
     - /=http://commafeed:8082/
 services:
