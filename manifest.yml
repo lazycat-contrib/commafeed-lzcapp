@@ -1,19 +1,22 @@
-lzc-sdk-version: "0.1"
 name: CommaFeed
 package: cloud.lazycat.app.commafeed
-version: 5.10.0
+version: 5.11.0
+min_os_version: 1.3.8
 description: 受Google Reader 启发的RSS阅读器
 homepage: https://github.com/Athou/commafeed
 author: Athou
 application:
-  subdomain: commafeed
-  background_task: true
-  public_path:
-    - /
-  routes:
-    - /=http://commafeed:8082/
+    subdomain: commafeed
+    background_task: true
+    public_path:
+        - /
+
+    upstreams:
+        - location: /
+          backend: http://commafeed:8082/
 services:
-  commafeed:
-    image: registry.lazycat.cloud/czyt/athou/commafeed:25602cd411a307e7
-    binds:
-      - /lzcapp/var/data:/commafeed/data
+    commafeed:
+        # athou/commafeed:5.11.0-h2-jvm
+        image: registry.lazycat.cloud/czyt/athou/commafeed:f820f79e1b896189
+        binds:
+            - /lzcapp/var/data:/commafeed/data
