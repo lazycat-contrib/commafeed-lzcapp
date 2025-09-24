@@ -2,9 +2,15 @@ name: CommaFeed
 package: cloud.lazycat.app.commafeed
 version: 5.11.1
 min_os_version: 1.3.8
-description: 受Google Reader 启发的RSS阅读器
 homepage: https://github.com/Athou/commafeed
 author: Athou
+locales:
+  zh:
+    name: CommaFeed
+    description: CommaFeed 是一个开源的 RSS 阅读器，提供简洁的界面和自托管支持。
+  en:
+    name: CommaFeed
+    description: CommaFeed is an open-source RSS reader that offers a clean interface and self-hosting support.
 application:
   subdomain: commafeed
   background_task: true
