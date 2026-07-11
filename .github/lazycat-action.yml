@@ -1,0 +1,39 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: dist/commafeed.lpk
+
+update:
+  strategy: publish
+  version_source:
+    type: image
+    image: commafeed
+
+build:
+  run_buildscript: false
+
+images:
+  - id: commafeed
+    target: service
+    service: commafeed
+    source: docker.io/athou/commafeed
+    channel: stable
+    tag_regex: '^\d+\.\d+\.\d+-h2-jvm$'
+    version_regex: '^(?P<version>\d+\.\d+\.\d+)-h2-jvm$'
+    delivery:
+      mode: lazycat
+
+stores:
+  official:
+    enabled: true
+    skip_if_version_exists: true
+    create_if_missing: false
+    changelog_locales: [zh, en]
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: CommaFeed
+    summary: Published from GitHub Actions
