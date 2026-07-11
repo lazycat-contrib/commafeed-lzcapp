@@ -3,13 +3,13 @@ application:
   background_task: true
   public_path:
     - /
-
   upstreams:
     - location: /
       backend: http://commafeed:8082/
 services:
   commafeed:
     # athou/commafeed:7.1.0-h2-jvm
-    image: registry.lazycat.cloud/czyt/athou/commafeed:8952ad7e363263d5
+    # upstream: docker.io/athou/commafeed:7.2.0-h2-jvm
+    image: registry.lazycat.cloud/czyt/athou/commafeed:c85b7dead721c396
     binds:
       - /lzcapp/var/data:/commafeed/data
