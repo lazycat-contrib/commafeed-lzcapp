@@ -9,7 +9,7 @@ application:
 services:
   commafeed:
     # athou/commafeed:7.1.0-h2-jvm
-    # upstream: docker.io/athou/commafeed:7.5.2-h2-jvm
-    image: registry.lazycat.cloud/czyt/athou/commafeed:fd4116b1463019cd
+    # upstream: docker.io/athou/commafeed:7.5.3-h2-jvm
+    image: registry.lazycat.cloud/czyt/athou/commafeed:54b3318cd5b57e5f
     binds:
       - /lzcapp/var/data:/commafeed/data
